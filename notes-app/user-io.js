@@ -1,7 +1,8 @@
 const getNotes = require('./notes')
 const yargs = require('yargs')
-const chalk = require('chalk')
-const { argv } = require('process')
+
+const { argv, title } = require('process')
+const notes = require('./notes')
 
 yargs.command ({
 
@@ -23,10 +24,10 @@ yargs.command ({
 
     },
     handler: function(argv) {
-        console.log(chalk.inverse.blue("Adding New Note"))
-        console.log(argv.title)
-        console.log(argv.body)
+        console.log('called')
+        notes.addNote(argv.title,argv.body)
     }
+
 
 })
 

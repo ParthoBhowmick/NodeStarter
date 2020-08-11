@@ -1,6 +1,3 @@
-
-// node core module 
-
 const getNotes = require('./notes')
 const chalk = require('chalk')
 const name = require('./util.js').variable
