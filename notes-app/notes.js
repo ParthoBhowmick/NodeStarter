@@ -4,7 +4,21 @@ const getNotes = function () {
     return 'Your notes....'
 }
 
+
+const deleteNote = function(title) {
+    const notes = loadNotes()
+
+    const notesToKeep = notes.filter(function (note) {
+        return note.title !== title
+    })
+
+    saveNotes(notesToKeep)
+
+}
+
 const addNote = function (title, body) {
+
+
     const notes = loadNotes()
 
     const duplicateNotes = notes.filter(function (note) {
@@ -52,5 +66,6 @@ const loadNotes = function () {
 
 module.exports = {
     getNotes: getNotes,
-    addNote: addNote
+    addNote: addNote,
+    removeNote: deleteNote
 }
