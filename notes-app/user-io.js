@@ -51,4 +51,15 @@ yargs.command ({
 
 })
 
+
+yargs.command ({
+
+    command : "GET",
+    describe : "getting all notes",
+    handler: () => notes.getNotes()
+    
+
+})
+
+
 console.log(yargs.argv)
