@@ -1,5 +1,4 @@
 const express = require("express")
-const mysql = require("mysql")
 const dotenv = require('dotenv')
 
 const app = express()
@@ -8,20 +7,6 @@ dotenv.config({
     path: "./.env"
 })
 
-const db = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DB_NAME
-})
-
-// connect to db
-db.connect( (error) => {
-    if(error)
-        console.log(error)
-    else
-        console.log("MySQL CONNECTED!!")
-})
 
 //route
 app.get("/", (req,res) => {
